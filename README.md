@@ -1,4 +1,4 @@
-🧪Fake REST API Client Simulator
+***🧪Fake REST API Client Simulator***
 
 A beginner-friendly project that visually explains how REST APIs work using simulated GET and POST requests.
 
