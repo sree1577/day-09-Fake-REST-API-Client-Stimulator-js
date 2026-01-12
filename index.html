@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fake REST API Client</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>🧪 Fake REST API Client Simulator</h1>
+  <p class="subtitle">Understand REST APIs, HTTP Methods & Status Codes</p>
+
+  <div class="container">
+
+    <!-- Request Panel -->
+    <div class="panel">
+      <h2>Request</h2>
+
+      <label>HTTP Method</label>
+      <select id="method">
+        <option>GET</option>
+        <option>POST</option>
+      </select>
+
+      <label>Endpoint</label>
+      <input type="text" id="endpoint" placeholder="/users" />
+
+      <label>Request Body (POST only)</label>
+      <textarea id="body" placeholder='{"name":"Dhanyata"}'></textarea>
+
+      <button onclick="send()">Send Request</button>
+    </div>
+
+    <!-- Response Panel -->
+    <div class="panel">
+      <h2>Response</h2>
+      <div id="status" class="status">Status: -</div>
+      <pre id="response">Waiting for request...</pre>
+    </div>
+
+  </div>
+
+  <!-- Explanation -->
+  <div class="explanation">
+    <h2>🔄 Request – Response Cycle</h2>
+    <p>
+      Client → Server → Processing → Response → Client
+    </p>
+    <p>
+      This simulator mimics how REST APIs work internally without a real backend.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

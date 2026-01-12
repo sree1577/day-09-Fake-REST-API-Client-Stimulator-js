@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.panel {
+  background: #1e293b;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.panel h2 {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+textarea {
+  height: 80px;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+pre {
+  background: #020617;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 120px;
+}
+
+.explanation {
+  margin-top: 30px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 10px;
+}
