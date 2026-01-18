@@ -2,55 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fake REST API Client</title>
+  <title>Fake REST API Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>🧪 Fake REST API Client Simulator</h1>
-  <p class="subtitle">Understand REST APIs, HTTP Methods & Status Codes</p>
+<header>
+  <h1>🧪 Fake REST API Simulator</h1>
+  <p class="subtitle">Learn REST APIs & HTTP methods interactively</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <!-- Request Panel -->
-    <div class="panel">
-      <h2>Request</h2>
+  <!-- Request Panel -->
+  <div class="panel">
+    <h2>Request</h2>
 
-      <label>HTTP Method</label>
-      <select id="method">
-        <option>GET</option>
-        <option>POST</option>
-      </select>
+    <label>HTTP Method</label>
+    <select id="method" onchange="toggleBody()">
+      <option>GET</option>
+      <option>POST</option>
+      <option>PUT</option>
+      <option>DELETE</option>
+    </select>
 
-      <label>Endpoint</label>
-      <input type="text" id="endpoint" placeholder="/users" />
+    <label>Endpoint</label>
+    <input type="text" id="endpoint" placeholder="/users or /users/1" />
 
-      <label>Request Body (POST only)</label>
-      <textarea id="body" placeholder='{"name":"Dhanyata"}'></textarea>
-
-      <button onclick="send()">Send Request</button>
+    <div class="chips">
+      <span onclick="setEndpoint('/users')">/users</span>
+      <span onclick="setEndpoint('/users/1')">/users/1</span>
     </div>
 
-    <!-- Response Panel -->
-    <div class="panel">
-      <h2>Response</h2>
-      <div id="status" class="status">Status: -</div>
-      <pre id="response">Waiting for request...</pre>
-    </div>
+    <label>Request Body (POST / PUT)</label>
+    <textarea id="body" placeholder='{"name":"Alice"}'></textarea>
 
+    <button onclick="send()">Send Request</button>
+    <button class="secondary" onclick="resetAll()">Reset</button>
   </div>
 
-  <!-- Explanation -->
-  <div class="explanation">
-    <h2>🔄 Request – Response Cycle</h2>
-    <p>
-      Client → Server → Processing → Response → Client
-    </p>
-    <p>
-      This simulator mimics how REST APIs work internally without a real backend.
-    </p>
+  <!-- Response Panel -->
+  <div class="panel">
+    <h2>Response</h2>
+    <div id="status" class="status">Status: -</div>
+    <pre id="response">Waiting for request...</pre>
+    <button class="secondary" onclick="copyResponse()">Copy Response</button>
   </div>
 
-  <script src="script.js"></script>
+</div>
+
+<!-- History -->
+<div class="history">
+  <h2>📜 Request History</h2>
+  <ul id="historyList"></ul>
+</div>
+
+<!-- Explanation -->
+<div class="explanation">
+  <h2>🔄 How REST Works</h2>
+  <p>Client → API → Business Logic → Response</p>
+  <p>This simulator helps you understand REST behavior without a backend.</p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
